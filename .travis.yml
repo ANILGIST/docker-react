@@ -6,16 +6,16 @@ before_install:
 script: 
   - docker run anilkumar/docker-react npm run test -- --coverage
 deploy:
-  - provider: elasticbeanstack
-  - region: us-east-2
-  - app: docker
-  - env: docker-env
-  - bucket_name: docker-test-elb
-  - bucket folder: docker
-    on: 
+   provider: elasticbeanstack
+   region: us-east-2
+   app: docker
+   env: docker-env
+   bucket_name: docker-test-elb
+   bucket folder: docker
+   on: 
       branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_key_id: 
+   access_key_id: $AWS_ACCESS_KEY
+   secret_key_id: 
       secret: $AWS_SECRET_KEY
 
    
